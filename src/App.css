@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.tender-form {
+  margin: 0px auto;
+  display: table;
+
+}
+
+.tender-form label {
+  display: block;
+  margin: 30px auto;
+  padding-right: 120px;
+  width: 100%;      
+}
+
+.tender-form button {
+  display: block;
+  margin: 0px auto;
+}
+
+.header-menu-table {
+  margin: 1px auto;
+}
