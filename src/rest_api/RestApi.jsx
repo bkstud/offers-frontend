@@ -1,4 +1,4 @@
-const BACKEND_ADDRESS = process.env.REACT_APP_BACKEND_ADDRESS || "https://localhost:3001"
+const BACKEND_ADDRESS = process.env.REACT_APP_BACKEND_ADDRESS || "http://localhost:3001"
 
 
 const getApiUrl = () => {
