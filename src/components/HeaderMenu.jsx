@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 export default function HeaderMenu() {
     return (
     <div >
@@ -5,10 +6,10 @@ export default function HeaderMenu() {
         <table className="header-menu-table" border="1">
         <tbody>
             <tr>
-                <td><a href="/">Strona główna</a></td>
-                <td><a href="/przetargi/aktualne">Aktualne przetargi</a></td>
-                <td><a href="/przetargi/zakonczone">Lista zakończonych przetargów</a></td>
-                <td><a href="/przetargi/dodaj">Dodaj przetarg</a></td>
+                <td><Link to="/">Strona główna</Link></td>
+                <td><Link to="/przetargi/aktualne">Aktualne przetargi</Link></td>
+                <td><Link to="/przetargi/zakonczone">Lista zakończonych przetargów</Link></td>
+                <td><Link to="/przetargi/dodaj">Dodaj przetarg</Link></td>
             </tr>
         </tbody>
         </table>

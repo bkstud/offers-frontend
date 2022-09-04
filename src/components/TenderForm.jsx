@@ -12,7 +12,7 @@ export default function TenderForm() {
     }
 
     const sendForm = (event) => {
-        setMessage("Wysyłam nowy przetarg...")
+        setMessage(<p>Wysyłam nowy przetarg..."</p>)
         let errorMessage = <p>Wystąpił błąd spróbuj ponownie później.</p>
         postTender(values).then((response) => {
             if(response.ok) {
@@ -37,6 +37,7 @@ export default function TenderForm() {
 
     return (
         <div>
+        <h3>Dodaj przetarg:</h3>
         <form className="tender-form" onSubmit={sendForm} onChange={handleChange}>
 
             <label htmlFor="name">Nazwa:

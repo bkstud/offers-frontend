@@ -1,9 +1,9 @@
-export default function MainPage(){
+export default function MainPage() {
     return (
         <div>
         <h3>Strona główna:</h3>
         
-        Strona służy do dodawania przetargów. <br/>
+        Strona służy do dodawania przetargów oraz składaniu ofert dla nich. <br/>
         
         <h5>Aktualne przetargi</h5>
         Dla każdego aktualnego przetargu można złożyć ofertę. <br/>

@@ -59,3 +59,10 @@
   margin: 1px auto;
   width: 100%;
 }
+
+.actual-tenders-list-table {
+  margin: 0px auto; 
+  border: 1px solid black;
+  padding: 5px;
+  border-collapse: collapse;;
+}

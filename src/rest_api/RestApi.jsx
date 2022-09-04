@@ -15,6 +15,13 @@ async function postTender(tender) {
                 })
 }
 
+async function getTenders(subpath="/") {
+    return fetch(getApiUrl() + "/tender" + subpath, {
+                    method: "GET",
+                })
+}
+
 export {
     postTender,
+    getTenders
 }
