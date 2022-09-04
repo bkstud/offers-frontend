@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import {useState} from 'react';
+import {DateTime} from 'luxon';
+import {postTender} from '../rest_api/RestApi'
 
 export default function TenderForm() {
     const [message, setMessage] = useState("")
@@ -11,8 +13,13 @@ export default function TenderForm() {
     const sendForm = (event) => {
         console.log('submit', values);
         setMessage("<span>&times;</span>This is an alert box.")
+        postTender(values)
         event.preventDefault();
     }
+    var dateToday = DateTime.local()
+    var dateTomorrow = DateTime.local().plus({days: 1})
+    dateToday = dateToday.toISO().slice(0, -10)
+    dateTomorrow = dateTomorrow.toISO().slice(0, -10)
 
     return (
         <div>
@@ -23,11 +30,11 @@ export default function TenderForm() {
             </label>
 
             <label htmlFor="begin">Data rozpoczęcia: 
-            <input type="datetime-local" id="begin" name="begin" required />
+            <input type="datetime-local" id="begin" name="begin" defaultValue={dateToday}  required />
             </label>
             
             <label htmlFor="end">Data zakończenia: 
-            <input type="datetime-local" id="end" name="end" required />
+            <input type="datetime-local" id="end" name="end" defaultValue={dateTomorrow} required />
             </label>
             
             
