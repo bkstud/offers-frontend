@@ -16,7 +16,7 @@ export default function useTender(id, {actual=false, finished=false}) {
     }
     
     useEffect(() => {
-        if(tenders) {
+        if(tenders.length > 0) {
             let searched = tenders.find(tender => tender.id.toString() === id)
             if(! searched) {
                 setMessage(<p>Przetarg z id: "{id}" nie został znaleziony na liście {name} przetargów.<br/>
@@ -27,7 +27,7 @@ export default function useTender(id, {actual=false, finished=false}) {
             }
         }
     }
-    , [tenders, id, setMessage. name])
+    , [tenders, id, setMessage, name])
 
     return {"tender": [tender, setTender], "message": tenderHook.message}
 }
