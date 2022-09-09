@@ -12,7 +12,7 @@ export default function TenderForm() {
     }
 
     const sendForm = (event) => {
-        setMessage(<p>Wysyłam nowy przetarg..."</p>)
+        setMessage(<p>Wysyłam nowy przetarg...</p>)
         let errorMessage = <p>Wystąpił błąd spróbuj ponownie później.</p>
         postTender(values).then((response) => {
             if(response.ok) {
@@ -27,6 +27,7 @@ export default function TenderForm() {
         })
         event.preventDefault();
     }
+
     let dateToday = DateTime.local()
     dateToday.set({hour: 23, minute: 59})
     let dateTomorrow = DateTime.local().plus({days: 1})

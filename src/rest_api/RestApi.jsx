@@ -15,6 +15,16 @@ async function postTender(tender) {
                 })
 }
 
+async function postOffer(offer) {
+    return fetch(getApiUrl() + "/offer/new", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(offer)
+                })
+}
+
 async function getTenders(subpath="/") {
     return fetch(getApiUrl() + "/tender" + subpath, {
                     method: "GET",
@@ -23,5 +33,6 @@ async function getTenders(subpath="/") {
 
 export {
     postTender,
-    getTenders
+    getTenders,
+    postOffer
 }
