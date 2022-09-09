@@ -1,31 +1,13 @@
-import {useEffect, useState} from 'react';
-import {getTenders} from '../rest_api/RestApi'
+import {Link} from 'react-router-dom';
+
+import useTenders from '../hooks/useTenders';
 import FormatedDate from './FormatedDate';
+
+
 export default function ActualTenders() {
-    const [tenders, setTenders] = useState([])
-    const [message, setMessage] = useState(<p>Ładowanie przetargów...</p>)
-
-    useEffect(() => {
-        let errorMessage = <p>Wystąpił błąd spróbuj ponownie później.</p>
-        
-        getTenders("/actual").then((response) => {
-                if(response.ok) {
-                    response.json().then(
-                        (data) => {
-                            console.log(data)
-                            setTenders(data)
-                            setMessage("")
-                    })
-                } else {
-                    setMessage(errorMessage)
-                }
-            },
-            (reason) => {
-                    console.log({"getTenders error": reason})
-                    setMessage(errorMessage)
-            })
-
-    }, [])
+    const tenderHook = useTenders({actual: true})
+    const [tenders] = tenderHook.tenders
+    const [message] = tenderHook.message
 
     return (
     <div>
@@ -41,7 +23,7 @@ export default function ActualTenders() {
             </tr>
             {tenders.map((tender) => (
                 <tr key={tender.id}>
-                <td>{tender.id}</td>
+                <td><Link to={"/przetargi/aktualne/" + tender.id} params={{"tender": tender}}>{tender.id}</Link></td>
                 <td>{tender.name}</td>
                 <td><FormatedDate date={tender.begin}/></td>
                 <td><FormatedDate date={tender.end}/></td>
