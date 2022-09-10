@@ -6,6 +6,7 @@ import ActualTenders from './components/ActualTenders';
 import {Route, Routes} from 'react-router-dom';
 import TenderDetails from './components/TenderDetails';
 import TenderOffer from './components/TenderOffer';
+import FinishedTenders from './components/FinishedTenders';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<MainPage/>}/>
         <Route path="/przetargi/dodaj" element={<TenderForm/>}/>
         <Route path="/przetargi/aktualne" element={<ActualTenders/>}/>
+        <Route path="/przetargi/zakonczone" element={<FinishedTenders/>}/>
         <Route path="/przetargi/aktualne/:id" element={<TenderDetails/>}/>
         <Route path="/przetargi/aktualne/oferta/:id" element={<TenderOffer/>}/>
         <Route path='*' exact={true} element={<MainPage/>}></Route>

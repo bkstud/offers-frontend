@@ -4,14 +4,14 @@ import useTenders from '../hooks/useTenders';
 import FormatedDate from './FormatedDate';
 
 
-export default function ActualTenders() {
-    const tenderHook = useTenders({actual: true})
+export default function FinishedTenders() {
+    const tenderHook = useTenders({finished: true})
     const [tenders] = tenderHook.tenders
     const [message] = tenderHook.message
 
     return (
     <div>
-        <h3>Aktualne przetargi:</h3>
+        <h3>Zakończone przetargi:</h3>
         {message}
         <table className="tenders-list-table" border="1">
         <tbody>
@@ -23,10 +23,10 @@ export default function ActualTenders() {
             </tr>
             {tenders.map((tender) => (
                 <tr key={tender.id}>
-                <td><Link to={"/przetargi/aktualne/" + tender.id} params={{"tender": tender}}>{tender.id}</Link></td>
+                <td><Link to={"/przetargi/zakonczone/" + tender.id} params={{"tender": tender}}>{tender.id}</Link></td>
                 <td>{tender.name}</td>
-                <td><FormatedDate date={tender.begin}/></td>
-                <td><FormatedDate date={tender.end}/></td>
+                <td>Zakończono zbieranie ofert</td>
+                <td>Zakończono zbieranie ofert</td>
                 </tr>
             ))}
         </tbody>

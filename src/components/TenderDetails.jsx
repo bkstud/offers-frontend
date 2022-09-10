@@ -16,7 +16,7 @@ export default function TenderDetails(props) {
             {actualTender ? 
                 <div>
                     <h3>Informacje podstawowe</h3>
-                    <table className="actual-tenders-list-table" border="1">
+                    <table className="tenders-list-table" border="1">
                     <tbody>
                         <tr>
                             <th>Liczba porządkowa</th>
