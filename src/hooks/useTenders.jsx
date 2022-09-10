@@ -22,6 +22,8 @@ export default function useTenders({actual=false, finished=false}) {
                     })
                 } else {
                     setMessage(errorMessage)
+                    response.json().then(
+                        (data) => {console.error('error:=', data)})
                 }
             },
             (reason) => {
