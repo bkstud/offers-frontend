@@ -46,7 +46,7 @@ export default function TenderForm() {
             </label>
 
             <label htmlFor="begin">Data rozpoczęcia:
-            <input type="datetime-local" id="begin" name="begin" defaultValue={dateToday}  required />
+            <input type="datetime-local" id="begin" name="begin" format-value='yyyy-MM-ddTHH:mm' defaultValue={dateToday} required />
             </label>
 
             <label htmlFor="end">Data zakończenia:
