@@ -66,3 +66,24 @@
   padding: 5px;
   border-collapse: collapse;;
 }
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  border-top: 5px solid #969696;
+  background-color: #76db95;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 15px;
+  font-size: 18px;
+  color: #212121;
+  margin-bottom: 20px;
+}
+.title .name {
+  margin: 0px auto;
+  font-size: 30px;
+}
+
+.title .date {
+  float: right;
+}      

@@ -1,9 +1,13 @@
 import {Link} from 'react-router-dom';
+import Clock from 'react-live-clock';
 
 export default function HeaderMenu() {
     return (
-    <div >
-        <h1>Przetargi</h1>
+    <div>
+        <div className='title'>
+        <span className='name'>Przetargi</span>
+        <span className='date'><Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/Warsaw'} /></span>
+        </div>
         <table className="header-menu-table" border="1">
         <tbody>
             <tr>
